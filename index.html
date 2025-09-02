@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>τ-Biology — Fungi, Viruses, and Temporal Energetics</title>
+  <meta name="description" content="A τ-first primer that contrasts fungi and viruses, defines a τ-bio dictionary, and maps biological tempo to energy flow." />
+
+  <!-- Inline favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdjM2FlZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjMGIwZjE5Ii8+PHRleHQgeD0iMTYiIHk9IjIxIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2cpIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPs6ZPC90ZXh0Pjwvc3ZnPg==" />
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --panel:#121827;
+      --ink:#e6e8ee;
+      --muted:#a3acc2;
+      --accent:#7c3aed;
+      --accent-2:#f59e0b;
+      --rule:#2a3348;
+      --code:#0e1422;
+      --link:#9aa8ff;
+      --maxw:980px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff;
+        --panel:#f6f7fb;
+        --ink:#0f1222;
+        --muted:#4a546e;
+        --rule:#e4e7f0;
+        --code:#f1f3f9;
+        --link:#2b59ff;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(124,58,237,.08), transparent 45%),
+        radial-gradient(1000px 700px at 110% 10%, rgba(245,158,11,.08), transparent 40%),
+        var(--bg);
+      color:var(--ink);
+      font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 20px 96px}
+    header{text-align:center;margin-bottom:32px}
+    .logo{
+      font-size:clamp(36px,6vw,64px);
+      font-weight:800;
+      letter-spacing:2px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      display:inline-block;
+      margin-bottom:12px;
+    }
+    h1{margin:0 0 8px;font-size:clamp(26px,4.5vw,38px);line-height:1.2}
+    .subtitle{color:var(--muted);font-size:15px}
+    .meta{margin-top:8px;color:var(--muted);font-size:14px}
+    nav{margin:26px auto;max-width:760px;text-align:left;background:var(--panel);
+        border:1px solid var(--rule);border-radius:12px;padding:16px 20px}
+    nav a{color:var(--link);text-decoration:none}
+    nav a:hover{text-decoration:underline}
+    nav ul{margin:0;padding-left:18px}
+    section{background:rgba(255,255,255,.02);border:1px solid var(--rule);
+        border-radius:16px;padding:24px 20px;margin:18px 0}
+    h2{margin:0 0 8px;font-size:clamp(20px,3.5vw,26px)}
+    h3{margin:16px 0 8px;font-size:18px}
+    p{margin:10px 0 0}
+    .equation{display:block;margin:12px 0;padding:12px 14px;background:var(--code);
+        border:1px solid var(--rule);border-radius:10px;
+        font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;overflow:auto;white-space:nowrap}
+    .abstract{font-style:italic;color:var(--muted)}
+    .callout{padding:14px;border:1px dashed var(--rule);border-radius:12px;background:rgba(245,158,11,.08)}
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+    table{width:100%;border-collapse:collapse;margin:8px 0}
+    th,td{border:1px solid var(--rule);padding:8px;vertical-align:top}
+    th{background:var(--panel);text-align:left}
+    code{background:var(--code);padding:1px 4px;border-radius:4px}
+    @media print{body{background:#fff}nav,section{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">τBio</div>
+      <h1>τ-Biology — Fungi, Viruses, and Temporal Energetics</h1>
+      <div class="subtitle">A τ-first primer on autonomous vs. parasitic τ-processing and a compact τ-bio dictionary</div>
+      <div class="meta">Author: Tristan White • v1.0 • Updated: Mon, Sep 1, 2025, 11:01 PM EDT</div>
+      <nav aria-label="Contents">
+        <ul>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#orientation">1. Orientation: Fungi vs. Viruses</a></li>
+          <li><a href="#tau-basics">2. τ-Basics for Biology</a></li>
+          <li><a href="#fungi">3. Fungi as Autonomous τ-Processors</a></li>
+          <li><a href="#viruses">4. Viruses as τ-Parasites/Modulators</a></li>
+          <li><a href="#dictionary">5. τ-Bio Dictionary</a></li>
+          <li><a href="#predictions">6. Predictions &amp; Tests</a></li>
+          <li><a href="#metrics">7. Practical Metrics &amp; Units</a></li>
+          <li><a href="#implications">8. Implications &amp; Ecosystem τ-Flux</a></li>
+          <li><a href="#references">References</a></li>
+          <li><a href="#appendix">Appendix — Datasheet Templates</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="abstract"><h2>Abstract</h2>
+        <p class="abstract">
+          We contrast fungi and viruses through a τ-first lens where <span class="equation" style="display:inline-block">τ ≡ E/c³</span> encodes
+          energy as operational “temporal charge.” Fungi behave as autonomous τ-processors with their own metabolic
+          throughput, while viruses are τ-parasites that redirect a host’s τ-allocation toward replication. We define
+          a compact τ-bio dictionary, derive simple observables (τ-rate, τ-allocation, τ-transport), and list testable
+          predictions relating biological tempo to energetic flow without changing units of standard biology.
+        </p>
+      </section>
+
+      <section id="orientation"><h2>1. Orientation: Fungi vs. Viruses</h2>
+        <table>
+          <tr><th>Feature</th><th>Fungi</th><th>Viruses</th></tr>
+          <tr><td>What they are</td><td>Eukaryotic organisms (cells with nuclei)</td><td>Acellular particles (genome + capsid ± envelope)</td></tr>
+          <tr><td>Metabolism</td><td>Autonomous; external digestion, absorption</td><td>None; use host cell machinery</td></tr>
+          <tr><td>Reproduction</td><td>Asexual &amp; sexual (spores, budding)</td><td>Only in hosts (lytic/latent/budding)</td></tr>
+          <tr><td>Role in τ-framework</td><td>Produce and allocate their own τ-throughput</td><td>Reroute host τ-allocation to assembly</td></tr>
+        </table>
+      </section>
+
+      <section id="tau-basics"><h2>2. τ-Basics for Biology</h2>
+        <div class="equation">τ ≡ E/c³</div>
+        <div class="equation">τ-rate (throughput):  \u1E8Bτ ≡ dτ/dt = P/c³  &nbsp; (P = metabolic power)</div>
+        <div class="equation">Lifetime τ-budget:  τ<sub>life</sub> = ∫ (P/c³) dt</div>
+        <div class="equation">Specific τ-rate (per mass):  j<sub>τ</sub> ≡ (P/M)/c³</div>
+        <p>Think of organisms as τ-processors that allocate a real-time τ-rate across maintenance, growth, replication, defense, and transport.</p>
+      </section>
+
+      <section id="fungi"><h2>3. Fungi as Autonomous τ-Processors</h2>
+        <p>Fungal mycelium is a τ-distribution network. Hyphae transport energy-bearing molecules to growth fronts and fruiting bodies.</p>
+        <div class="equation">τ-allocation:  \u1E8Bτ = \u1E8Bτ<sub>maint</sub> + \u1E8Bτ<sub>growth</sub> + \u1E8Bτ<sub>repro</sub> + \u1E8Bτ<sub>defense</sub> + \u1E8Bτ<sub>transport</sub></div>
+        <p class="callout"><strong>Network hypothesis:</strong> Under τ-scarcity, mycelial graphs shift toward low-loss backbones; under abundance, they add exploratory links.</p>
+      </section>
+
+      <section id="viruses"><h2>4. Viruses as τ-Parasites/Modulators</h2>
+        <p>Free virions have ~zero autonomous τ-rate. Inside hosts, they redirect host τ toward viral genomes and proteins.</p>
+        <div class="equation">Host τ reallocation:  \u1E8Bτ<sub>host</sub> → \u1E8Bτ<sub>host,maint↓</sub> + \u1E8Bτ<sub>viral↑</sub></div>
+        <p class="callout"><strong>Fitness proxy:</strong> Viral replication tempo scales with host specific τ-rate j<sub>τ,host</sub> and biosynthetic access.</p>
+      </section>
+
+      <section id="dictionary"><h2>5. τ-Bio Dictionary</h2>
+        <table>
+          <tr><th>Term</th><th>Definition</th></tr>
+          <tr><td>τ-rate ( \u1E8Bτ )</td><td>Throughput P/c³; biological “tempo.”</td></tr>
+          <tr><td>τ-budget</td><td>Integrated history ∫P/c³ dt (per organism/colony/season).</td></tr>
+          <tr><td>τ-allocation</td><td>Split of \u1E8Bτ across tasks (maint/growth/repro/defense/transport).</td></tr>
+          <tr><td>τ-transport</td><td>Movement of usable energy within bodies/colonies (blood flow, mycelial translocation).</td></tr>
+          <tr><td>τ-density</td><td>Stored chemical energy per volume in τ units (lipids, glycogen).</td></tr>
+          <tr><td>τ-bottleneck</td><td>Rate-limiting step capping \u1E8Bτ (oxygen delivery, substrate diffusion).</td></tr>
+          <tr><td>τ-parasitism</td><td>Redirection of host τ toward pathogen replication (viruses).</td></tr>
+          <tr><td>τ-ecosystem flux</td><td>Community-level Σ(P/c³) over area/time.</td></tr>
+        </table>
+      </section>
+
+      <section id="predictions"><h2>6. Predictions &amp; Tests</h2>
+        <h3>6.1 Fungal tempo vs. energy availability</h3>
+        <div class="equation">Growth front speed v ∝ j<sub>τ</sub>  (holding temperature/moisture constant)</div>
+        <p>Test: manipulate substrate energy density; measure hyphal advance and ATP/O<sub>2</sub> consumption.</p>
+
+        <h3>6.2 Network optimality under τ-scarcity</h3>
+        <div class="equation">Graph cost ↓ and path efficiency ↑ as \u1E8Bτ falls</div>
+        <p>Test: image mycelial graphs; compute efficiency/robustness metrics vs. caloric input.</p>
+
+        <h3>6.3 Viral yield vs. host j<sub>τ</sub></h3>
+        <div class="equation">Burst size, replication rate ↑ with host j<sub>τ</sub> (within viable ranges)</div>
+        <p>Test: vary host metabolic state (aeration, glucose) and quantify viral output; control for stress responses.</p>
+
+        <h3>6.4 Biological oscillators as τ-probes</h3>
+        <div class="equation">δf/f ≈ δτ/τ  for energy-limited oscillators (e.g., growth cycles, translation pace)</div>
+        <p>Test: track oscillator frequencies under small, reversible energy shifts; expect correlated drifts.</p>
+      </section>
+
+      <section id="metrics"><h2>7. Practical Metrics &amp; Units</h2>
+        <div class="equation">Estimate \u1E8Bτ from power:  \u1E8Bτ = P/c³  (P via respirometry or calorimetry)</div>
+        <div class="equation">Specific τ-rate:  j<sub>τ</sub> = (P/M)/c³</div>
+        <p>Reporting template: mean ± s.d. of \u1E8Bτ, j<sub>τ</sub>, and allocation fractions {maint,growth,repro,defense,transport}.</p>
+      </section>
+
+      <section id="implications"><h2>8. Implications &amp; Ecosystem τ-Flux</h2>
+        <p>Fungi act as early τ-mobilizers (unlock biomass; cycle nutrients). Viruses act as τ-redistributors and selection pressure on host allocation. Ecosystem health can be viewed as stable, high-quality τ-flux within planetary limits.</p>
+      </section>
+
+      <section id="references"><h2>References</h2>
+        <ol>
+          <li>Standard microbiology, mycology, and virology texts for definitions and life cycles.</li>
+          <li>Energetics and metabolic scaling literature for power–tempo relations.</li>
+          <li>White, T. (2025). Unified Temporal–Energetic Geometry (τ-first framework).</li>
+        </ol>
+      </section>
+
+      <section id="appendix"><h2>Appendix — Datasheet Templates</h2>
+        <h3>A.1 Fungal culture</h3>
+        <table>
+          <tr><th>Field</th><th>Notes</th></tr>
+          <tr><td>Species/strain</td><td>—</td></tr>
+          <tr><td>Temperature, humidity</td><td>—</td></tr>
+          <tr><td>Substrate energy density</td><td>kJ per g; water activity</td></tr>
+          <tr><td>P (mW), \u1E8Bτ (×10<sup>−23</sup>)</td><td>From respirometry</td></tr>
+          <tr><td>Allocation fractions</td><td>{maint,growth,repro,defense,transport}</td></tr>
+          <tr><td>Graph metrics</td><td>Efficiency, robustness, degree distribution</td></tr>
+        </table>
+
+        <h3>A.2 Virus–host system</h3>
+        <table>
+          <tr><th>Field</th><th>Notes</th></tr>
+          <tr><td>Virus &amp; host</td><td>—</td></tr>
+          <tr><td>Host metabolic state</td><td>Glucose, O<sub>2</sub>, ATP proxies</td></tr>
+          <tr><td>j<sub>τ,host</sub></td><td>(P/M)/c³</td></tr>
+          <tr><td>Burst size, replication rate</td><td>—</td></tr>
+          <tr><td>δf/f of oscillator</td><td>e.g., translation or growth cycle</td></tr>
+        </table>
+      </section>
+    </main>
+
+    <footer>© <span id="y"></span> Tristan White • Creative Commons BY-NC-SA 4.0</footer>
+  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
