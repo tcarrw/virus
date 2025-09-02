@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>τ-Biology — Fungi, Viruses, and Temporal Energetics</title>
-  <meta name="description" content="A τ-first primer that contrasts fungi and viruses, defines a τ-bio dictionary, and maps biological tempo to energy flow." />
+  <meta name="description" content="A τ-first primer contrasting fungi and viruses, defining a τ-bio dictionary, and mapping biological tempo to energy flow. Includes safe DIY tests and downloadable datasheets." />
 
   <!-- Inline favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdjM2FlZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjMGIwZjE5Ii8+PHRleHQgeD0iMTYiIHk9IjIxIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2cpIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPs6ZPC90ZXh0Pjwvc3ZnPg==" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdjM2FlZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjMGIwZjE5Ii8+PHRleHQgeD0iMTYiIHk9IjIxIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2cpIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPlQ8L3RleHQ+PC9zdmc+" />
 
   <style>
     :root{
@@ -21,6 +21,8 @@
       --code:#0e1422;
       --link:#9aa8ff;
       --maxw:980px;
+      --btn:#1f2a44;
+      --btn-text:#e6e8ee;
     }
     @media (prefers-color-scheme: light){
       :root{
@@ -31,6 +33,8 @@
         --rule:#e4e7f0;
         --code:#f1f3f9;
         --link:#2b59ff;
+        --btn:#e9ecf7;
+        --btn-text:#0f1222;
       }
     }
     *{box-sizing:border-box}
@@ -78,6 +82,13 @@
     th,td{border:1px solid var(--rule);padding:8px;vertical-align:top}
     th{background:var(--panel);text-align:left}
     code{background:var(--code);padding:1px 4px;border-radius:4px}
+    .btn{
+      display:inline-block;border:1px solid var(--rule);background:var(--btn);
+      color:var(--btn-text);padding:10px 14px;border-radius:10px;cursor:pointer;
+      font-weight:600;margin:6px 8px 0 0;text-decoration:none;user-select:none
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{transform:translateY(1px)}
     @media print{body{background:#fff}nav,section{break-inside:avoid}}
   </style>
 </head>
@@ -86,8 +97,9 @@
     <header>
       <div class="logo">τBio</div>
       <h1>τ-Biology — Fungi, Viruses, and Temporal Energetics</h1>
-      <div class="subtitle">A τ-first primer on autonomous vs. parasitic τ-processing and a compact τ-bio dictionary</div>
-      <div class="meta">Author: Tristan White • v1.0 • Updated: Mon, Sep 1, 2025, 11:01 PM EDT</div>
+      <div class="subtitle">A τ-first primer on autonomous vs. parasitic τ-processing, a compact τ-bio dictionary, and safe DIY tests</div>
+      <div class="meta">Author: Tristan White • v1.0 • Updated: Tue, Sep 2, 2025, 12:15 AM EDT</div>
+
       <nav aria-label="Contents">
         <ul>
           <li><a href="#abstract">Abstract</a></li>
@@ -96,9 +108,11 @@
           <li><a href="#fungi">3. Fungi as Autonomous τ-Processors</a></li>
           <li><a href="#viruses">4. Viruses as τ-Parasites/Modulators</a></li>
           <li><a href="#dictionary">5. τ-Bio Dictionary</a></li>
-          <li><a href="#predictions">6. Predictions &amp; Tests</a></li>
-          <li><a href="#metrics">7. Practical Metrics &amp; Units</a></li>
-          <li><a href="#implications">8. Implications &amp; Ecosystem τ-Flux</a></li>
+          <li><a href="#predictions">6. Predictions &amp; Lab-Grade Tests</a></li>
+          <li><a href="#diy">7. DIY Tests (Safe/Home)</a></li>
+          <li><a href="#metrics">8. Practical Metrics &amp; Units</a></li>
+          <li><a href="#implications">9. Implications &amp; Ecosystem τ-Flux</a></li>
+          <li><a href="#downloads">10. Download Datasheets</a></li>
           <li><a href="#references">References</a></li>
           <li><a href="#appendix">Appendix — Datasheet Templates</a></li>
         </ul>
@@ -108,11 +122,12 @@
     <main>
       <section id="abstract"><h2>Abstract</h2>
         <p class="abstract">
-          We contrast fungi and viruses through a τ-first lens where <span class="equation" style="display:inline-block">τ ≡ E/c³</span> encodes
-          energy as operational “temporal charge.” Fungi behave as autonomous τ-processors with their own metabolic
-          throughput, while viruses are τ-parasites that redirect a host’s τ-allocation toward replication. We define
-          a compact τ-bio dictionary, derive simple observables (τ-rate, τ-allocation, τ-transport), and list testable
-          predictions relating biological tempo to energetic flow without changing units of standard biology.
+          We contrast fungi and viruses through a τ-first lens where
+          <span class="equation" style="display:inline-block">&tau; &equiv; E/c<sup>3</sup></span>
+          encodes energy as operational “temporal charge.” Fungi behave as autonomous τ-processors with their own
+          metabolic throughput, while viruses are τ-parasites that redirect a host’s τ-allocation toward replication.
+          We define a compact τ-bio dictionary, derive simple observables (τ̇, τ-allocation, τ-transport), suggest
+          lab-grade tests, and include safe DIY options that avoid culturing pathogens.
         </p>
       </section>
 
@@ -120,78 +135,116 @@
         <table>
           <tr><th>Feature</th><th>Fungi</th><th>Viruses</th></tr>
           <tr><td>What they are</td><td>Eukaryotic organisms (cells with nuclei)</td><td>Acellular particles (genome + capsid ± envelope)</td></tr>
-          <tr><td>Metabolism</td><td>Autonomous; external digestion, absorption</td><td>None; use host cell machinery</td></tr>
+          <tr><td>Metabolism</td><td>Autonomous; external digestion and absorption</td><td>None; use host cell machinery</td></tr>
           <tr><td>Reproduction</td><td>Asexual &amp; sexual (spores, budding)</td><td>Only in hosts (lytic/latent/budding)</td></tr>
-          <tr><td>Role in τ-framework</td><td>Produce and allocate their own τ-throughput</td><td>Reroute host τ-allocation to assembly</td></tr>
+          <tr><td>Role in τ-framework</td><td>Produce &amp; allocate their own τ-throughput</td><td>Reroute host τ-allocation to assembly</td></tr>
         </table>
       </section>
 
       <section id="tau-basics"><h2>2. τ-Basics for Biology</h2>
-        <div class="equation">τ ≡ E/c³</div>
-        <div class="equation">τ-rate (throughput):  \u1E8Bτ ≡ dτ/dt = P/c³  &nbsp; (P = metabolic power)</div>
-        <div class="equation">Lifetime τ-budget:  τ<sub>life</sub> = ∫ (P/c³) dt</div>
-        <div class="equation">Specific τ-rate (per mass):  j<sub>τ</sub> ≡ (P/M)/c³</div>
+        <div class="equation">&tau; &equiv; E/c<sup>3</sup></div>
+        <div class="equation">&tau;&#x0307; &equiv; d&tau;/dt = P/c<sup>3</sup> &nbsp; (P = metabolic power)</div>
+        <div class="equation">Lifetime τ-budget: &tau;<sub>life</sub> = &int; (P/c<sup>3</sup>) dt</div>
+        <div class="equation">Specific τ-rate (per mass): j<sub>&tau;</sub> &equiv; (P/M)/c<sup>3</sup></div>
         <p>Think of organisms as τ-processors that allocate a real-time τ-rate across maintenance, growth, replication, defense, and transport.</p>
       </section>
 
       <section id="fungi"><h2>3. Fungi as Autonomous τ-Processors</h2>
         <p>Fungal mycelium is a τ-distribution network. Hyphae transport energy-bearing molecules to growth fronts and fruiting bodies.</p>
-        <div class="equation">τ-allocation:  \u1E8Bτ = \u1E8Bτ<sub>maint</sub> + \u1E8Bτ<sub>growth</sub> + \u1E8Bτ<sub>repro</sub> + \u1E8Bτ<sub>defense</sub> + \u1E8Bτ<sub>transport</sub></div>
+        <div class="equation">&tau;&#x0307; = &tau;&#x0307;<sub>maint</sub> + &tau;&#x0307;<sub>growth</sub> + &tau;&#x0307;<sub>repro</sub> + &tau;&#x0307;<sub>defense</sub> + &tau;&#x0307;<sub>transport</sub></div>
         <p class="callout"><strong>Network hypothesis:</strong> Under τ-scarcity, mycelial graphs shift toward low-loss backbones; under abundance, they add exploratory links.</p>
       </section>
 
       <section id="viruses"><h2>4. Viruses as τ-Parasites/Modulators</h2>
         <p>Free virions have ~zero autonomous τ-rate. Inside hosts, they redirect host τ toward viral genomes and proteins.</p>
-        <div class="equation">Host τ reallocation:  \u1E8Bτ<sub>host</sub> → \u1E8Bτ<sub>host,maint↓</sub> + \u1E8Bτ<sub>viral↑</sub></div>
-        <p class="callout"><strong>Fitness proxy:</strong> Viral replication tempo scales with host specific τ-rate j<sub>τ,host</sub> and biosynthetic access.</p>
+        <div class="equation">Host τ reallocation: &tau;&#x0307;<sub>host</sub> → &tau;&#x0307;<sub>host,maint↓</sub> + &tau;&#x0307;<sub>viral↑</sub></div>
+        <p class="callout"><strong>Fitness proxy:</strong> Viral replication tempo scales with host specific τ-rate j<sub>&tau;,host</sub> and biosynthetic access.</p>
       </section>
 
       <section id="dictionary"><h2>5. τ-Bio Dictionary</h2>
         <table>
           <tr><th>Term</th><th>Definition</th></tr>
-          <tr><td>τ-rate ( \u1E8Bτ )</td><td>Throughput P/c³; biological “tempo.”</td></tr>
-          <tr><td>τ-budget</td><td>Integrated history ∫P/c³ dt (per organism/colony/season).</td></tr>
-          <tr><td>τ-allocation</td><td>Split of \u1E8Bτ across tasks (maint/growth/repro/defense/transport).</td></tr>
+          <tr><td>τ-rate (&tau;&#x0307;)</td><td>Throughput P/c<sup>3</sup>; biological “tempo.”</td></tr>
+          <tr><td>τ-budget</td><td>Integrated history &int;P/c<sup>3</sup> dt (per organism/colony/season).</td></tr>
+          <tr><td>τ-allocation</td><td>Split of &tau;&#x0307; across tasks (maint/growth/repro/defense/transport).</td></tr>
           <tr><td>τ-transport</td><td>Movement of usable energy within bodies/colonies (blood flow, mycelial translocation).</td></tr>
           <tr><td>τ-density</td><td>Stored chemical energy per volume in τ units (lipids, glycogen).</td></tr>
-          <tr><td>τ-bottleneck</td><td>Rate-limiting step capping \u1E8Bτ (oxygen delivery, substrate diffusion).</td></tr>
+          <tr><td>τ-bottleneck</td><td>Rate-limiting step capping &tau;&#x0307; (oxygen delivery, substrate diffusion).</td></tr>
           <tr><td>τ-parasitism</td><td>Redirection of host τ toward pathogen replication (viruses).</td></tr>
-          <tr><td>τ-ecosystem flux</td><td>Community-level Σ(P/c³) over area/time.</td></tr>
+          <tr><td>τ-ecosystem flux</td><td>Community-level Σ(P/c<sup>3</sup>) over area/time.</td></tr>
         </table>
       </section>
 
-      <section id="predictions"><h2>6. Predictions &amp; Tests</h2>
+      <section id="predictions"><h2>6. Predictions &amp; Lab-Grade Tests</h2>
         <h3>6.1 Fungal tempo vs. energy availability</h3>
-        <div class="equation">Growth front speed v ∝ j<sub>τ</sub>  (holding temperature/moisture constant)</div>
-        <p>Test: manipulate substrate energy density; measure hyphal advance and ATP/O<sub>2</sub> consumption.</p>
+        <div class="equation">Growth-front speed v &prop; j<sub>&tau;</sub>  (holding temperature/moisture constant)</div>
+        <p>Test: manipulate substrate energy density; measure hyphal advance and ATP/O<sub>2</sub> proxies with appropriate lab equipment.</p>
 
         <h3>6.2 Network optimality under τ-scarcity</h3>
-        <div class="equation">Graph cost ↓ and path efficiency ↑ as \u1E8Bτ falls</div>
+        <div class="equation">Graph cost ↓ and path efficiency ↑ as &tau;&#x0307; falls</div>
         <p>Test: image mycelial graphs; compute efficiency/robustness metrics vs. caloric input.</p>
 
-        <h3>6.3 Viral yield vs. host j<sub>τ</sub></h3>
-        <div class="equation">Burst size, replication rate ↑ with host j<sub>τ</sub> (within viable ranges)</div>
-        <p>Test: vary host metabolic state (aeration, glucose) and quantify viral output; control for stress responses.</p>
+        <h3>6.3 Viral yield vs. host j<sub>&tau;</sub></h3>
+        <div class="equation">Burst size and replication rate ↑ with host j<sub>&tau;</sub> (within viable ranges)</div>
+        <p>Note: this is a professional-lab topic only; do not culture viruses outside licensed facilities.</p>
 
         <h3>6.4 Biological oscillators as τ-probes</h3>
-        <div class="equation">δf/f ≈ δτ/τ  for energy-limited oscillators (e.g., growth cycles, translation pace)</div>
+        <div class="equation">&delta;f/f &asymp; &delta;&tau;/&tau;  for energy-limited oscillators</div>
         <p>Test: track oscillator frequencies under small, reversible energy shifts; expect correlated drifts.</p>
       </section>
 
-      <section id="metrics"><h2>7. Practical Metrics &amp; Units</h2>
-        <div class="equation">Estimate \u1E8Bτ from power:  \u1E8Bτ = P/c³  (P via respirometry or calorimetry)</div>
-        <div class="equation">Specific τ-rate:  j<sub>τ</sub> = (P/M)/c³</div>
-        <p>Reporting template: mean ± s.d. of \u1E8Bτ, j<sub>τ</sub>, and allocation fractions {maint,growth,repro,defense,transport}.</p>
+      <section id="diy"><h2>7. DIY Tests (Safe/Home)</h2>
+        <p class="callout"><strong>Safety first:</strong> Only use food-safe organisms and consumer kits (e.g., baker’s yeast, edible mushroom kits). Do <em>not</em> culture pathogens; follow kit instructions and local regulations.</p>
+
+        <h3>7.1 Yeast “τ-meter” via CO₂</h3>
+        <p><strong>Goal:</strong> Use baker’s yeast to track a proxy for &tau;&#x0307; as sugar availability changes.</p>
+        <ul>
+          <li><em>Setup:</em> A sealed (but pressure-relieved) fermentation vessel, a consumer CO₂ sensor or mass-change scale, and a constant-temperature room.</li>
+          <li><em>Measure:</em> CO₂ production rate (ppm/min or g/min) at different sugar levels; hold volume and temperature steady.</li>
+          <li><em>τ-proxy:</em> Treat instantaneous fermentation power as proportional to CO₂ rate; plot “τ-rate” &propto; CO₂ rate vs. sugar.</li>
+          <li><em>Observation:</em> As sugar depletes, &tau;&#x0307; falls; with renewed sugar, &tau;&#x0307; recovers—demonstrating τ-allocation shifts.</li>
+        </ul>
+
+        <h3>7.2 Mushroom kit growth &amp; network efficiency</h3>
+        <p><strong>Goal:</strong> Visualize τ-transport trade-offs in a mycelial network from an edible mushroom grow kit.</p>
+        <ul>
+          <li><em>Setup:</em> Standard oyster mushroom kit; photograph daily under similar light/distance.</li>
+          <li><em>Measure:</em> Front advance (mm/day) and visible branching density.</li>
+          <li><em>Compare:</em> Normal watering vs. mild, safe variation (within kit guidance). Expect more exploratory branching when resources are abundant, tighter backbones when scarce.</li>
+        </ul>
+
+        <h3>7.3 Bread dough rise as an energy-limited oscillator</h3>
+        <p><strong>Goal:</strong> Use dough rise to illustrate &delta;f/f &asymp; &delta;&tau;/&tau;.</p>
+        <ul>
+          <li><em>Setup:</em> Two identical doughs; vary only sugar content within recipe norms.</li>
+          <li><em>Measure:</em> Time to reach a fixed rise height. Higher sugar → faster cycle (higher effective τ-rate).</li>
+        </ul>
+
+        <p><em>Notes:</em> Keep all tests observational and comparative. Avoid precise cultivation protocols; stick to kit guidance and food-safe materials.</p>
       </section>
 
-      <section id="implications"><h2>8. Implications &amp; Ecosystem τ-Flux</h2>
+      <section id="metrics"><h2>8. Practical Metrics &amp; Units</h2>
+        <div class="equation">Estimate &tau;&#x0307; from power: &tau;&#x0307; = P/c<sup>3</sup>  (P via calorimetry/respirometry proxies)</div>
+        <div class="equation">Specific τ-rate: j<sub>&tau;</sub> = (P/M)/c<sup>3</sup></div>
+        <p>Reporting template: mean ± s.d. of &tau;&#x0307;, j<sub>&tau;</sub>, and allocation fractions {maint, growth, repro, defense, transport}.</p>
+      </section>
+
+      <section id="implications"><h2>9. Implications &amp; Ecosystem τ-Flux</h2>
         <p>Fungi act as early τ-mobilizers (unlock biomass; cycle nutrients). Viruses act as τ-redistributors and selection pressure on host allocation. Ecosystem health can be viewed as stable, high-quality τ-flux within planetary limits.</p>
+      </section>
+
+      <section id="downloads"><h2>10. Download Datasheets</h2>
+        <p>Grab CSV templates for logging your safe DIY experiments. These open in Excel, Numbers, or Google Sheets.</p>
+        <a class="btn" id="dlYeast" href="#">Download Yeast Datasheet (CSV)</a>
+        <a class="btn" id="dlMushroom" href="#">Download Mushroom Datasheet (CSV)</a>
+        <a class="btn" id="dlCombined" href="#">Download Combined Datasheet (CSV)</a>
+        <p class="callout"><strong>Privacy tip:</strong> Avoid personal identifiers in notes; prefer experiment IDs/dates.</p>
       </section>
 
       <section id="references"><h2>References</h2>
         <ol>
           <li>Standard microbiology, mycology, and virology texts for definitions and life cycles.</li>
-          <li>Energetics and metabolic scaling literature for power–tempo relations.</li>
+          <li>Energetics/metabolic scaling literature for power–tempo relations.</li>
           <li>White, T. (2025). Unified Temporal–Energetic Geometry (τ-first framework).</li>
         </ol>
       </section>
@@ -200,30 +253,102 @@
         <h3>A.1 Fungal culture</h3>
         <table>
           <tr><th>Field</th><th>Notes</th></tr>
-          <tr><td>Species/strain</td><td>—</td></tr>
-          <tr><td>Temperature, humidity</td><td>—</td></tr>
-          <tr><td>Substrate energy density</td><td>kJ per g; water activity</td></tr>
-          <tr><td>P (mW), \u1E8Bτ (×10<sup>−23</sup>)</td><td>From respirometry</td></tr>
-          <tr><td>Allocation fractions</td><td>{maint,growth,repro,defense,transport}</td></tr>
-          <tr><td>Graph metrics</td><td>Efficiency, robustness, degree distribution</td></tr>
+          <tr><td>Species/strain</td><td>Food-safe or kit-provided only</td></tr>
+          <tr><td>Environment</td><td>Temperature, humidity (per kit guidance)</td></tr>
+          <tr><td>Substrate</td><td>Type and energy density (qualitative ok)</td></tr>
+          <tr><td>P proxy, &tau;&#x0307;</td><td>Photo-based growth rate or CO₂ proxy</td></tr>
+          <tr><td>Allocation fractions</td><td>{maint, growth, repro, defense, transport} (qualitative)</td></tr>
+          <tr><td>Graph metrics</td><td>Branching density, backbone length (qualitative)</td></tr>
         </table>
 
-        <h3>A.2 Virus–host system</h3>
+        <h3>A.2 Yeast fermentation</h3>
         <table>
           <tr><th>Field</th><th>Notes</th></tr>
-          <tr><td>Virus &amp; host</td><td>—</td></tr>
-          <tr><td>Host metabolic state</td><td>Glucose, O<sub>2</sub>, ATP proxies</td></tr>
-          <tr><td>j<sub>τ,host</sub></td><td>(P/M)/c³</td></tr>
-          <tr><td>Burst size, replication rate</td><td>—</td></tr>
-          <tr><td>δf/f of oscillator</td><td>e.g., translation or growth cycle</td></tr>
+          <tr><td>Yeast &amp; recipe</td><td>Standard baker’s yeast; food-safe ingredients</td></tr>
+          <tr><td>Temperature</td><td>Room temp; keep constant across trials</td></tr>
+          <tr><td>Sugar variation</td><td>Small, recipe-compatible changes</td></tr>
+          <tr><td>CO₂ rate</td><td>Sensor reading or mass change over time</td></tr>
+          <tr><td>τ-proxy</td><td>&propto; CO₂ rate</td></tr>
         </table>
       </section>
     </main>
 
     <footer>© <span id="y"></span> Tristan White • Creative Commons BY-NC-SA 4.0</footer>
   </div>
+
   <script>
+    // keep the footer year current
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Utility: trigger CSV download with BOM for Excel-friendliness
+    function downloadCSV(filename, rows) {
+      const bom = '\uFEFF'; // Byte Order Mark helps Excel detect UTF-8
+      const csv = rows.map(r => r.map(cell => {
+        const s = (cell ?? '').toString();
+        // Escape double quotes by doubling them, wrap if needed
+        const needsQuotes = /[,"\n]/.test(s);
+        const escaped = s.replace(/"/g, '""');
+        return needsQuotes ? `"${escaped}"` : escaped;
+      }).join(',')).join('\n');
+      const blob = new Blob([bom + csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Yeast datasheet
+    document.getElementById('dlYeast').addEventListener('click', function(e){
+      e.preventDefault();
+      const rows = [
+        ['Yeast τ-Biology Datasheet'],
+        ['Version','v1.0'],
+        ['Notes','Log food-safe yeast fermentation as a τ̇ proxy (CO₂ rate). Avoid PII.'],
+        [],
+        ['Timestamp','Experiment_ID','Yeast_Brand_or_Lot','Temperature_C','Volume_L','Sugar_g_per_L','CO2_Rate_ppm_per_min','Mass_Change_g','TauRate_Proxy','Notes'],
+        ['YYYY-MM-DD hh:mm','Y-001','Brand X','22.0','1.00','50','120','-0.35','','Start'],
+        ['YYYY-MM-DD hh:mm','Y-001','Brand X','22.0','1.00','25','65','-0.18','','After dilution']
+      ];
+      downloadCSV('yeast_tau_datasheet.csv', rows);
+    });
+
+    // Mushroom datasheet
+    document.getElementById('dlMushroom').addEventListener('click', function(e){
+      e.preventDefault();
+      const rows = [
+        ['Mushroom τ-Biology Datasheet'],
+        ['Version','v1.0'],
+        ['Notes','Track edible mushroom kit growth. No sterile/pathogen work.'],
+        [],
+        ['Date','Experiment_ID','Species','Temperature_C','Humidity_pct','Photo_Filename','Front_Advance_mm_per_day','Branching_Density_1to5','Watering_Regime','Notes'],
+        ['YYYY-MM-DD','M-101','Oyster','22.5','65','day1.jpg','5.2','3','Normal','Baseline'],
+        ['YYYY-MM-DD','M-101','Oyster','22.5','65','day2.jpg','6.0','4','Normal','Increased branching']
+      ];
+      downloadCSV('mushroom_tau_datasheet.csv', rows);
+    });
+
+    // Combined datasheet
+    document.getElementById('dlCombined').addEventListener('click', function(e){
+      e.preventDefault();
+      const rows = [
+        ['τ-Biology Combined Datasheet'],
+        ['Version','v1.0'],
+        ['Notes','Includes Yeast (CO₂) and Mushroom kit templates in one CSV (separated by blank lines).'],
+        [],
+        ['Section','Yeast'],
+        ['Timestamp','Experiment_ID','Yeast_Brand_or_Lot','Temperature_C','Volume_L','Sugar_g_per_L','CO2_Rate_ppm_per_min','Mass_Change_g','TauRate_Proxy','Notes'],
+        ['YYYY-MM-DD hh:mm','Y-001','Brand X','22.0','1.00','50','120','-0.35','','Start'],
+        [],
+        ['Section','Mushroom'],
+        ['Date','Experiment_ID','Species','Temperature_C','Humidity_pct','Photo_Filename','Front_Advance_mm_per_day','Branching_Density_1to5','Watering_Regime','Notes'],
+        ['YYYY-MM-DD','M-101','Oyster','22.5','65','day1.jpg','5.2','3','Normal','Baseline']
+      ];
+      downloadCSV('tau_biology_combined_datasheet.csv', rows);
+    });
   </script>
 </body>
 </html>
